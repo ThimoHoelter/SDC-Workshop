@@ -8,7 +8,6 @@ Usage: #definition
 * title = "Example for definition-based extraction"
 * status = #draft
 
-
 * item[+] // Erstellung der Observation
   * insert addExtractionContextGrouperNew("Observation_PSA-Serologie", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)
   * item[+]
@@ -55,10 +54,6 @@ Usage: #definition
 // Specimen - z.B. identifier, condition & note (z.B. "Probe bei Ankunft in zwei Teile zerbrochen."), .subject (fhirpath Referenz auf einen Patient)
 // Condition - Statt DiagReport.code eine neue Condition generieren
 
-// Live-Demo:
-// Specimen.status ändern/updaten
-
-
 // Primäres Gleason Muster (Epstein 2005)
 * item[+]
   * insert addExtractionContextGrouperNew("Observation_PrimaerGleason", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)  
@@ -77,7 +72,7 @@ Usage: #definition
   * item[+]
     * insert addObservationStatus("Observation_PrimaerGleason_status", final)
   * item[+]
-    * insert addEffectiveTimeToday("Observation_GleasonGrading_effective")
+    * insert addEffectiveDate_Today("Observation_GleasonGrading_effective")
 
 // Sekundäres Gleason Muster (Epstein 2005)
 * item[+]
@@ -97,7 +92,7 @@ Usage: #definition
   * item[+]
     * insert addObservationStatus("Observation_SekundaerGleason_status", final)
   * item[+]
-    * insert addEffectiveTimeToday("Observation_GleasonGrading_effective")
+    * insert addEffectiveDate_Today("Observation_GleasonGrading_effective")
 
 * item[+]
   * insert addExtractionContextGrouperNew("Observation_GleasonGrading", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)  
@@ -115,8 +110,24 @@ Usage: #definition
   * item[+]
     * insert addObservationStatus("Observation_GleasonGrading_status", final)
   * item[+]
-    * insert addEffectiveTimeToday("Observation_GleasonGrading_effective")
+    * insert addEffectiveDate_Today("Observation_GleasonGrading_effective")
 
+// Perineurale Infiltration
+* item[+]
+  * insert addExtractionContextGrouperNew("Observation_PerineuraleInfiltration", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)
+  * item[+]
+    * insert addExtractionItem("2.16.840.1.113883.3.1937.777.18.2.4.10380", #open-choice, "Perineurale Infiltration", "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept.coding")
+    * code = $loinc#92837-4 "Perineural invasion [Presence] in Cancer specimen"
+    * answerOption[+].valueCoding = $sct#52101004 "Present (qualifier value)"
+    * answerOption[+].valueCoding = $sct#47492008 "Not seen (qualifier value)"
+    * answerOption[+].valueCoding = $sct#1156316003 "Cannot be determined (qualifier value)"
+  * item[+]
+    * insert addExtractionHiddenItem("Observation_PerineuraleInfiltration_code", #choice, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding")
+    * initial.valueCoding = $loinc#92837-4 "Perineural invasion [Presence] in Cancer specimen"
+  * item[+]
+    * insert addObservationStatus("Observation_PerineuraleInfiltration_status", final)
+  * item[+]
+    * insert addEffectiveDate_Today("Observation_PerineuraleInfiltration_effective")
 
 //------------------------------------------------
 // Definitionen der RuleSets
@@ -163,10 +174,10 @@ RuleSet: addObservationStatus(linkId, code)
 * definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
 * initial.valueCoding = $Observation-Status#{code}
 
-RuleSet: addEffectiveTimeToday(linkId)
+RuleSet: addEffectiveDate_Today(linkId)
 * insert hiddenItem
 * linkId = {linkId}
-* type = #dateTime
+* type = #date
 * definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
 * extension[+]
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
