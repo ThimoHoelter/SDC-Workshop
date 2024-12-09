@@ -128,7 +128,7 @@ Usage: #definition
   * item[=].linkId = "DiagnostischeSchlussfolgerung_ConclusionCode"
   * item[=].type = #choice
   * item[=].text =  "Diagnostische Schlussfolgerung Kodierung"
-  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusionCode.coding"
+ // * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#" 
   * item[=].answerOption[+].valueCoding = $sct#822970008 "Acinar cell cystadenocarcinoma of prostate (disorder)"
   * item[=].answerOption[+].valueCoding = $sct#399490008 "Adenocarcinoma of prostate (disorder)"
   * item[=].answerOption[+].valueCoding = $sct#278060005 "Endometrioid carcinoma of prostate (disorder)"
@@ -137,7 +137,7 @@ Usage: #definition
   * item[+]
   * item[=].linkId = "DiagnostischeSchlussfolgerung_EffectiveDateTime"
   * item[=].type = #date
-  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.effectiveDateTime"
   * item[=].extension[+]
   * item[=].extension[=].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
   * item[=].extension[=].valueExpression.language = #text/fhirpath
