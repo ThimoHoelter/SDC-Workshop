@@ -1,0 +1,78 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "sdc-workshop",
+  "url": "http://example.org/ImplementationGuide/sdc-workshop",
+  "version": "0.1.0",
+  "name": "SDCWorkshop",
+  "status": "draft",
+  "publisher": "Thimo Hoelter",
+  "contact": [
+    {
+      "name": "Thimo Hoelter",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://example.org/example-publisher"
+        }
+      ]
+    }
+  ],
+  "packageId": "sdc-workshop",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "Questionnaire/WorkshopDBE"
+        },
+        "name": "Example for definition-based extraction",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/WorkshopOBE"
+        },
+        "name": "Example for observation-based extraction",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Questionnaire/Aufgabe1"
+        },
+        "name": "SDC Workshop - Aufgabe 1: Anfertigen eines Fragebogens für klinische Vorbefunde",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Specimen/SpecimenBeispiel1"
+        },
+        "name": "SpecimenBeispiel1",
+        "exampleBoolean": true
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "Home",
+          "generation": "markdown"
+        }
+      ]
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2024+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "ci-build"
+      }
+    ]
+  }
+}

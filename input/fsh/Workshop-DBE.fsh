@@ -8,73 +8,30 @@ Usage: #definition
 * status = #draft
 
 * item[+] // Erstellung der Observation
-  * insert addExtractionContextGrouperNew("Observation_PSA-Serologie", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)
+  * insert addExtractionContextGrouperNew("Observation_PSA", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)
   * item[+]
     * initial.valueCoding = $loinc#77599-9 "Additional documentation"
-    * insert addExtractionHiddenItem("PSA-Serologie_Category_SectionType", #choice, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category.coding")
+    * insert addExtractionHiddenItem("Observation_PSA_Category_SectionType", #choice, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category.coding")
   * item[+]
-    * insert addExtractionHiddenItem("PSA-Serologie_Code", #choice, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding")
+    * insert addExtractionHiddenItem("Observation_PSA_Code", #choice, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding")
     * initial.valueCoding = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"
   * item[+] //Einziges Item welches im Formular angezeigt wird
-    * insert addExtractionItem("PSA-Serologie_Value", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value") 
+    * insert addExtractionItem("Observation_PSA_Value", #decimal, "Angaben zur PSA-Serologie", "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value") 
     * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma" 
-    * initial.valueDecimal = 1.23
+    * initial.valueDecimal = 1.234
     * insert uunit(ng/mL)
+    * insert maxDecimalPlaces(3)
     //maxdecimal
   * item[+] // Maßeinheit (Displayname, System und Code werden ins Finding übertragen)
-    * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit")
+    * insert addExtractionHiddenItem("Observation_PSA_Unit_Display", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit")
     * initial.valueString = "ng/mL"
   * item[+]
-    * insert addExtractionHiddenItem("PSA-Serologie_Unit_Code", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code")
+    * insert addExtractionHiddenItem("Observation_PSA_Unit_Code", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code")
     * initial.valueString = "ng/mL"
+// Auskommentiert, da die Extrahierung der valueUri zu einem Fehler im Fhirlab führt.
 //  * item[+]
-//    * insert addExtractionHiddenItem("PSA-Serologie_Unit_System", #url, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system")
-//    * initial.valueUri = $unitsofmeasure
-
-* item[+] // Erstellung des DiagReport
-  * insert addExtractionContextGrouperNew("DiagnosticReport_Schlussfolgerung", "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport", #DiagnosticReport)
-  * item[+]
-  * item[=].extension[+]
-  * item[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
-  * item[=].extension[=].valueBoolean = true
-  * item[=].linkId = "DiagnostischeSchlussfolgerung_Code"
-  * item[=].type = #choice
-  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.code.coding"
-  * item[=].initial.valueCoding = $loinc#60568-3 "Pathology Synoptic report"
-  * item[+]
-  * item[=].linkId = "DiagnostischeSchlussfolgerung_Text"
-  * item[=].type = #string
-  * item[=].text =  "Diagnostische Schlussfolgerung"
-  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusion"
-  * item[+]
-  * item[=].linkId = "DiagnostischeSchlussfolgerung_Code"
-  * item[=].type = #choice
-  * item[=].text =  "Diagnostische Schlussfolgerung Kodierung"
-  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusionCode.coding"
-  * item[=].answerOption[+].valueCoding = $sct#822970008 "Acinar cell cystadenocarcinoma of prostate (disorder)"
-  * item[=].answerOption[+].valueCoding = $sct#399490008 "Adenocarcinoma of prostate (disorder)"
-  * item[=].answerOption[+].valueCoding = $sct#278060005 "Endometrioid carcinoma of prostate (disorder)"
-  * item[=].answerOption[+].valueCoding = $sct#715412008 "Familial malignant neoplasm of prostate (disorder)"
-  * item[=].answerOption[+].valueCoding = $sct#94503003 "Metastatic malignant neoplasm to prostate (disorder)"
-  * item[+]
-  * item[=].linkId = "DiagnostischeSchlussfolgerung_DateTime"
-  * item[=].type = #date
-  * item[=].text =  "Diagnostische Schlussfolgerung"
-  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
-  * item[=].extension[+]
-  * item[=].extension[=].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
-  * item[=].extension[=].valueExpression.language = #text/fhirpath
-  * item[=].extension[=].valueExpression.expression = "today()"
-  * item[=].extension[+]
-  * item[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
-  * item[=].extension[=].valueBoolean = true
-
-
-// Brainstorming für Eigenarbeit
-// DiagnosticReport - conclusion(String) / Code
-// Observation - GleasonScore (Sek., Pri., ISUP & Perineurale Infiltration) - vorbereiten!
-// Specimen - z.B. identifier, condition & note (z.B. "Probe bei Ankunft in zwei Teile zerbrochen."), .subject (fhirpath Referenz auf einen Patient)
-// Condition - Statt DiagReport.code eine neue Condition generieren
+//    * insert addExtractionHiddenItem("Observation_PSA_Unit_System", #url, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system")
+//    * initial.valueUri = $unitsofmeasure 
 
 // Primäres Gleason Muster (Epstein 2005)
 * item[+]
@@ -94,7 +51,7 @@ Usage: #definition
   * item[+]
     * insert addObservationStatus("Observation_PrimaerGleason_status", final)
   * item[+]
-    * insert addEffectiveDate_Today("Observation_GleasonGrading_effective")
+    * insert addObservationEffectiveDate_Today("Observation_GleasonGrading_effective")
 
 // Sekundäres Gleason Muster (Epstein 2005)
 * item[+]
@@ -114,8 +71,9 @@ Usage: #definition
   * item[+]
     * insert addObservationStatus("Observation_SekundaerGleason_status", final)
   * item[+]
-    * insert addEffectiveDate_Today("Observation_GleasonGrading_effective")
+    * insert addObservationEffectiveDate_Today("Observation_GleasonGrading_effective")
 
+// Gleason Score ISUP 2014 - WHO 2016
 * item[+]
   * insert addExtractionContextGrouperNew("Observation_GleasonGrading", "http://hl7.org/fhir/StructureDefinition/Observation#Observation", #Observation)  
   * item[+]
@@ -132,7 +90,7 @@ Usage: #definition
   * item[+]
     * insert addObservationStatus("Observation_GleasonGrading_status", final)
   * item[+]
-    * insert addEffectiveDate_Today("Observation_GleasonGrading_effective")
+    * insert addObservationEffectiveDate_Today("Observation_GleasonGrading_effective")
 
 // Perineurale Infiltration
 * item[+]
@@ -149,7 +107,44 @@ Usage: #definition
   * item[+]
     * insert addObservationStatus("Observation_PerineuraleInfiltration_status", final)
   * item[+]
-    * insert addEffectiveDate_Today("Observation_PerineuraleInfiltration_effective")
+    * insert addObservationEffectiveDate_Today("Observation_PerineuraleInfiltration_effective")
+
+* item[+] // Erstellung des DiagReport
+  * insert addExtractionContextGrouperNew("DiagnosticReport_Schlussfolgerung", "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport", #DiagnosticReport)
+  * item[+]
+  * item[=].linkId = "DiagnostischeSchlussfolgerung_Code"
+  * item[=].type = #choice
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.code.coding"
+  * item[=].initial.valueCoding = $loinc#60568-3 "Pathology Synoptic report"
+  * item[=].extension[+]
+  * item[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+  * item[=].extension[=].valueBoolean = true
+  * item[+]
+  * item[=].linkId = "DiagnostischeSchlussfolgerung_Conclusion"
+  * item[=].type = #string
+  * item[=].text =  "Diagnostische Schlussfolgerung"
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusion"
+  * item[+]
+  * item[=].linkId = "DiagnostischeSchlussfolgerung_ConclusionCode"
+  * item[=].type = #choice
+  * item[=].text =  "Diagnostische Schlussfolgerung Kodierung"
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusionCode.coding"
+  * item[=].answerOption[+].valueCoding = $sct#822970008 "Acinar cell cystadenocarcinoma of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#399490008 "Adenocarcinoma of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#278060005 "Endometrioid carcinoma of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#715412008 "Familial malignant neoplasm of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#94503003 "Metastatic malignant neoplasm to prostate (disorder)"
+  * item[+]
+  * item[=].linkId = "DiagnostischeSchlussfolgerung_EffectiveDateTime"
+  * item[=].type = #date
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+  * item[=].extension[+]
+  * item[=].extension[=].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+  * item[=].extension[=].valueExpression.language = #text/fhirpath
+  * item[=].extension[=].valueExpression.expression = "today()"
+  * item[=].extension[+]
+  * item[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+  * item[=].extension[=].valueBoolean = true
 
 //------------------------------------------------
 // Definitionen der RuleSets
@@ -196,7 +191,8 @@ RuleSet: addObservationStatus(linkId, code)
 * definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
 * initial.valueCoding = $Observation-Status#{code}
 
-RuleSet: addEffectiveDate_Today(linkId)
+// Belegt das Feld Observation.effectiveDateTime mit dem Datum des heutigen Tages
+RuleSet: addObservationEffectiveDate_Today(linkId)
 * insert hiddenItem
 * linkId = {linkId}
 * type = #date
@@ -212,3 +208,9 @@ RuleSet: hiddenItem
 * extension[+]
   * url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
   * valueBoolean = true
+
+// Maximale Anzahl der Dezimalstellen festlegen
+RuleSet: maxDecimalPlaces(maxPlaces)
+* extension[+]
+  * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
+  * valueInteger = {maxPlaces}

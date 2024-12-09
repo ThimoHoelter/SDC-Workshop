@@ -1,0 +1,7 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "Aufgabe1",
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/Aufgabe1",
+  "title": "SDC Workshop - Aufgabe 1: Anfertigen eines Fragebogens für klinische Vorbefunde",
+  "status": "draft"
+}

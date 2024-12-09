@@ -19,8 +19,6 @@ Usage: #definition
 * item[+] // ProbenID der übersandten Bioprobe(n)
 
 
-
-
 /*
 RuleSets zur Verwendung:
 

@@ -1,0 +1,709 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "WorkshopDBE",
+  "meta": {
+    "lastUpdated": "2024-05-05T12:48:40Z"
+  },
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/WorkshopDBE",
+  "item": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
+      "item": [
+        {
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "77599-9",
+                "system": "http://loinc.org",
+                "display": "Additional documentation"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "Observation_PSA_Category_SectionType",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "2857-1",
+                "system": "http://loinc.org",
+                "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+              }
+            }
+          ],
+          "linkId": "Observation_PSA_Code",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding"
+        },
+        {
+          "code": [
+            {
+              "code": "2857-1",
+              "system": "http://loinc.org",
+              "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "initial": [
+            {
+              "valueDecimal": 1.234
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+              "valueCoding": {
+                "code": "ng/mL",
+                "system": "http://unitsofmeasure.org"
+              }
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+              "valueInteger": 3
+            }
+          ],
+          "linkId": "Observation_PSA_Value",
+          "text": "Angaben zur PSA-Serologie",
+          "type": "decimal",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueString": "ng/mL"
+            }
+          ],
+          "linkId": "Observation_PSA_Unit_Display",
+          "type": "text",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueString": "ng/mL"
+            }
+          ],
+          "linkId": "Observation_PSA_Unit_Code",
+          "type": "text",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code"
+        }
+      ],
+      "linkId": "Observation_PSA",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
+      "item": [
+        {
+          "code": [
+            {
+              "code": "44641-9",
+              "system": "http://loinc.org",
+              "display": "Gleason pattern.primary in Prostate tumor"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "369770006",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 1 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369771005",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 2 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369772003",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 3 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369773008",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 4 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369774002",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 5 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "43771008",
+                "system": "http://snomed.info/sct",
+                "display": "Morphology not applicable (finding)"
+              }
+            }
+          ],
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10290",
+          "text": "Primäres Gleason Muster - Epstein 2005",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "44641-9",
+                "system": "http://loinc.org",
+                "display": "Gleason pattern.primary in Prostate tumor"
+              }
+            }
+          ],
+          "linkId": "Observation_PrimaerGleason_code",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "final",
+                "system": "http://hl7.org/fhir/observation-status"
+              }
+            }
+          ],
+          "linkId": "Observation_PrimaerGleason_status",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            },
+            {
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "today()"
+              },
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+            }
+          ],
+          "linkId": "Observation_GleasonGrading_effective",
+          "type": "date",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+        }
+      ],
+      "linkId": "Observation_PrimaerGleason",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
+      "item": [
+        {
+          "code": [
+            {
+              "code": "44642-7",
+              "system": "http://loinc.org",
+              "display": "Gleason pattern.secondary in Prostate tumor"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "369770006",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 1 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369771005",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 2 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369772003",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 3 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369773008",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 4 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "369774002",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason Pattern 5 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "43771008",
+                "system": "http://snomed.info/sct",
+                "display": "Morphology not applicable (finding)"
+              }
+            }
+          ],
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.11246",
+          "text": "Sekundäres Gleason Muster - Epstein 2005",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "44642-7",
+                "system": "http://loinc.org",
+                "display": "Gleason pattern.secondary in Prostate tumor"
+              }
+            }
+          ],
+          "linkId": "Observation_SekundaerGleason_code",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "final",
+                "system": "http://hl7.org/fhir/observation-status"
+              }
+            }
+          ],
+          "linkId": "Observation_SekundaerGleason_status",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            },
+            {
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "today()"
+              },
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+            }
+          ],
+          "linkId": "Observation_GleasonGrading_effective",
+          "type": "date",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+        }
+      ],
+      "linkId": "Observation_SekundaerGleason",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
+      "item": [
+        {
+          "code": [
+            {
+              "code": "94734-1",
+              "system": "http://loinc.org",
+              "display": "Prostate cancer grade group [Score] in Prostate tumor Qualitative"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "860742008",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason grade group 1 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "860743003",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason grade group 2 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "860744009",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason grade group 3 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "860745005",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason grade group 4 (finding)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "860746006",
+                "system": "http://snomed.info/sct",
+                "display": "Gleason grade group 5 (finding)"
+              }
+            }
+          ],
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.2.11200",
+          "text": "Gradinggruppe nach ISUP 2014/WHO 2016",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "94734-1",
+                "system": "http://loinc.org",
+                "display": "Prostate cancer grade group [Score] in Prostate tumor Qualitative"
+              }
+            }
+          ],
+          "linkId": "Observation_GleasonGrading_code",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "final",
+                "system": "http://hl7.org/fhir/observation-status"
+              }
+            }
+          ],
+          "linkId": "Observation_GleasonGrading_status",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            },
+            {
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "today()"
+              },
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+            }
+          ],
+          "linkId": "Observation_GleasonGrading_effective",
+          "type": "date",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+        }
+      ],
+      "linkId": "Observation_GleasonGrading",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "Observation"
+        }
+      ],
+      "item": [
+        {
+          "code": [
+            {
+              "code": "92837-4",
+              "system": "http://loinc.org",
+              "display": "Perineural invasion [Presence] in Cancer specimen"
+            }
+          ],
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "52101004",
+                "system": "http://snomed.info/sct",
+                "display": "Present (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "47492008",
+                "system": "http://snomed.info/sct",
+                "display": "Not seen (qualifier value)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "1156316003",
+                "system": "http://snomed.info/sct",
+                "display": "Cannot be determined (qualifier value)"
+              }
+            }
+          ],
+          "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10380",
+          "text": "Perineurale Infiltration",
+          "type": "open-choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "92837-4",
+                "system": "http://loinc.org",
+                "display": "Perineural invasion [Presence] in Cancer specimen"
+              }
+            }
+          ],
+          "linkId": "Observation_PerineuraleInfiltration_code",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code.coding"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "final",
+                "system": "http://hl7.org/fhir/observation-status"
+              }
+            }
+          ],
+          "linkId": "Observation_PerineuraleInfiltration_status",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            },
+            {
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "today()"
+              },
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+            }
+          ],
+          "linkId": "Observation_PerineuraleInfiltration_effective",
+          "type": "date",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+        }
+      ],
+      "linkId": "Observation_PerineuraleInfiltration",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation"
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemExtractionContext",
+          "valueCode": "DiagnosticReport"
+        }
+      ],
+      "item": [
+        {
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "60568-3",
+                "system": "http://loinc.org",
+                "display": "Pathology Synoptic report"
+              }
+            }
+          ],
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "DiagnostischeSchlussfolgerung_Code",
+          "type": "choice",
+          "definition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.code.coding"
+        },
+        {
+          "linkId": "DiagnostischeSchlussfolgerung_Conclusion",
+          "type": "string",
+          "text": "Diagnostische Schlussfolgerung",
+          "definition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusion"
+        },
+        {
+          "answerOption": [
+            {
+              "valueCoding": {
+                "code": "822970008",
+                "system": "http://snomed.info/sct",
+                "display": "Acinar cell cystadenocarcinoma of prostate (disorder)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "399490008",
+                "system": "http://snomed.info/sct",
+                "display": "Adenocarcinoma of prostate (disorder)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "278060005",
+                "system": "http://snomed.info/sct",
+                "display": "Endometrioid carcinoma of prostate (disorder)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "715412008",
+                "system": "http://snomed.info/sct",
+                "display": "Familial malignant neoplasm of prostate (disorder)"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "94503003",
+                "system": "http://snomed.info/sct",
+                "display": "Metastatic malignant neoplasm to prostate (disorder)"
+              }
+            }
+          ],
+          "linkId": "DiagnostischeSchlussfolgerung_ConclusionCode",
+          "type": "choice",
+          "text": "Diagnostische Schlussfolgerung Kodierung",
+          "definition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusionCode.coding"
+        },
+        {
+          "extension": [
+            {
+              "valueExpression": {
+                "language": "text/fhirpath",
+                "expression": "today()"
+              },
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ],
+          "linkId": "DiagnostischeSchlussfolgerung_EffectiveDateTime",
+          "type": "date",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+        }
+      ],
+      "linkId": "DiagnosticReport_Schlussfolgerung",
+      "type": "group",
+      "definition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport"
+    }
+  ],
+  "name": "Extraction_example",
+  "title": "Example for definition-based extraction",
+  "status": "draft"
+}

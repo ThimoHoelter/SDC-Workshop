@@ -35,7 +35,7 @@ Usage: #definition
 * item[+]
   * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie")
   * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma"      
-  * insert maxDecimalPlaces(2)
+  * insert maxDecimalPlaces(3)
   * insert uunit(ng/mL)       
   * insert observationExtract 
   * insert observationExtract_laboratory_InCategory // zu übertragenes Konzept ist im RuleSet (weiter unten) festgelegt
@@ -50,11 +50,6 @@ RuleSet: addItem(linkId, type, text)
 * linkId = {linkId}
 * type = {type}
 * text = {text}
-
-RuleSet: maxDecimalPlaces(maxPlaces)
-* extension[+]
-  * url = "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
-  * valueInteger = {maxPlaces}
 
 RuleSet: uunit(code)
 * extension[+]

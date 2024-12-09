@@ -1,0 +1,5 @@
+Output File                      Name               Type      FSH File             Lines
+Questionnaire-Aufgabe1.json      Aufgabe1           Instance  Aufgabe1.fsh         1 - 19
+Questionnaire-WorkshopDBE.json   WorkshopDBE        Instance  Workshop-DBE.fsh     1 - 147
+Questionnaire-WorkshopOBE.json   WorkshopOBE        Instance  Workshop-OBE.fsh     2 - 42
+Specimen-SpecimenBeispiel1.json  SpecimenBeispiel1  Instance  ExampleSpecimen.fsh  1 - 6

@@ -1,0 +1,34 @@
+[
+  {
+    "outputFile": "Questionnaire-Aufgabe1.json",
+    "fshName": "Aufgabe1",
+    "fshType": "Instance",
+    "fshFile": "Aufgabe1.fsh",
+    "startLine": 1,
+    "endLine": 19
+  },
+  {
+    "outputFile": "Questionnaire-WorkshopDBE.json",
+    "fshName": "WorkshopDBE",
+    "fshType": "Instance",
+    "fshFile": "Workshop-DBE.fsh",
+    "startLine": 1,
+    "endLine": 147
+  },
+  {
+    "outputFile": "Questionnaire-WorkshopOBE.json",
+    "fshName": "WorkshopOBE",
+    "fshType": "Instance",
+    "fshFile": "Workshop-OBE.fsh",
+    "startLine": 2,
+    "endLine": 42
+  },
+  {
+    "outputFile": "Specimen-SpecimenBeispiel1.json",
+    "fshName": "SpecimenBeispiel1",
+    "fshType": "Instance",
+    "fshFile": "ExampleSpecimen.fsh",
+    "startLine": 1,
+    "endLine": 6
+  }
+]

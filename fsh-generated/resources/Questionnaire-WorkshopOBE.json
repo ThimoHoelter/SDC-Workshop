@@ -1,0 +1,118 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "WorkshopOBE",
+  "meta": {
+    "lastUpdated": "2024-05-05T12:48:40Z"
+  },
+  "url": "http://example.org/fhir/QuestionnairesSDC/Questionnaire/WorkshopOBE",
+  "item": [
+    {
+      "code": [
+        {
+          "code": "2857-1",
+          "system": "http://loinc.org",
+          "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+          "valueInteger": 2
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+          "valueCoding": {
+            "code": "ng/mL",
+            "system": "http://unitsofmeasure.org"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "22637-3",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "display": "Pathology report diagnosis"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "PSA-Serologie",
+      "type": "decimal",
+      "text": "Angaben zur PSA-Serologie",
+      "enableBehavior": "all"
+    },
+    {
+      "code": [
+        {
+          "code": "2857-1",
+          "system": "http://loinc.org",
+          "display": "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+        }
+      ],
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+          "valueInteger": 3
+        },
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-unit",
+          "valueCoding": {
+            "code": "ng/mL",
+            "system": "http://unitsofmeasure.org"
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observationExtract",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        },
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "22637-3",
+                "system": "https://www.medizininformatik-initiative.de/fhir/ext/modul-patho/ValueSet/mii-vs-patho-section-types-loinc",
+                "display": "Pathology report diagnosis"
+              }
+            ]
+          }
+        }
+      ],
+      "linkId": "2.16.840.1.113883.3.1937.777.18.2.4.10130",
+      "type": "decimal",
+      "text": "Angaben zur PSA-Serologie"
+    }
+  ],
+  "name": "Extraction_example",
+  "title": "Example for observation-based extraction",
+  "status": "draft"
+}
