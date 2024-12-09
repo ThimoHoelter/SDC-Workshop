@@ -1,4 +1,3 @@
-Alias: $unitsofmeasure = http://unitsofmeasure.org
 Instance: WorkshopDBE
 InstanceOf: Questionnaire
 Usage: #definition
@@ -21,15 +20,16 @@ Usage: #definition
     * code = $loinc#2857-1 "Prostate specific Ag [Mass/volume] in Serum or Plasma" 
     * initial.valueDecimal = 1.23
     * insert uunit(ng/mL)
+    //maxdecimal
   * item[+] // Maßeinheit (Displayname, System und Code werden ins Finding übertragen)
     * insert addExtractionHiddenItem("PSA-Serologie_Unit_Display", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit")
     * initial.valueString = "ng/mL"
   * item[+]
     * insert addExtractionHiddenItem("PSA-Serologie_Unit_Code", #text, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code")
     * initial.valueString = "ng/mL"
-  * item[+]
-    * insert addExtractionHiddenItem("PSA-Serologie_Unit_System", #url, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system")
-    * initial.valueUri = $unitsofmeasure
+//  * item[+]
+//    * insert addExtractionHiddenItem("PSA-Serologie_Unit_System", #url, "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system")
+//    * initial.valueUri = $unitsofmeasure
 
 * item[+] // Erstellung des DiagReport
   * insert addExtractionContextGrouperNew("DiagnosticReport_Schlussfolgerung", "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport", #DiagnosticReport)
@@ -40,13 +40,35 @@ Usage: #definition
   * item[=].linkId = "DiagnostischeSchlussfolgerung_Code"
   * item[=].type = #choice
   * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.code.coding"
-  * item[=].initial.valueCoding = $loinc#75620-5 "TNM clinical staging before treatment panel Cancer" //ICD-10 VS einfügen
+  * item[=].initial.valueCoding = $loinc#60568-3 "Pathology Synoptic report"
   * item[+]
-  * item[=].linkId = "DiagnostischeSchlussfolgerung_Value"
+  * item[=].linkId = "DiagnostischeSchlussfolgerung_Text"
   * item[=].type = #string
   * item[=].text =  "Diagnostische Schlussfolgerung"
   * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusion"
-  * item[=].initial.valueString = "pT1N1M0"
+  * item[+]
+  * item[=].linkId = "DiagnostischeSchlussfolgerung_Code"
+  * item[=].type = #choice
+  * item[=].text =  "Diagnostische Schlussfolgerung Kodierung"
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport#DiagnosticReport.conclusionCode.coding"
+  * item[=].answerOption[+].valueCoding = $sct#822970008 "Acinar cell cystadenocarcinoma of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#399490008 "Adenocarcinoma of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#278060005 "Endometrioid carcinoma of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#715412008 "Familial malignant neoplasm of prostate (disorder)"
+  * item[=].answerOption[+].valueCoding = $sct#94503003 "Metastatic malignant neoplasm to prostate (disorder)"
+  * item[+]
+  * item[=].linkId = "DiagnostischeSchlussfolgerung_DateTime"
+  * item[=].type = #date
+  * item[=].text =  "Diagnostische Schlussfolgerung"
+  * item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.effectiveDateTime"
+  * item[=].extension[+]
+  * item[=].extension[=].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression"
+  * item[=].extension[=].valueExpression.language = #text/fhirpath
+  * item[=].extension[=].valueExpression.expression = "today()"
+  * item[=].extension[+]
+  * item[=].extension[=].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+  * item[=].extension[=].valueBoolean = true
+
 
 // Brainstorming für Eigenarbeit
 // DiagnosticReport - conclusion(String) / Code

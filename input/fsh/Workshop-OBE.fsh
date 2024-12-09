@@ -31,7 +31,6 @@ Usage: #definition
   * url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-observation-extract-category"
   * valueCodeableConcept = http://terminology.hl7.org/CodeSystem/observation-category#22637-3 "Pathology report diagnosis"
 
-
 // Mit RuleSets
 * item[+]
   * insert addItem("2.16.840.1.113883.3.1937.777.18.2.4.10130", #decimal, "Angaben zur PSA-Serologie")

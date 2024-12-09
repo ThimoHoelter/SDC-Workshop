@@ -12,3 +12,4 @@ Alias: $Condition-Category = http://terminology.hl7.org/CodeSystem/condition-cat
 Alias: $Observation-Status = http://hl7.org/fhir/observation-status
 Alias: $ICDO-3 = urn:oid:2.16.840.1.113883.6.43.1
 Alias: $ICDO-3_Auflagen = urn:oid:1.2.276.0.76.3.1.131.1.5.153
+Alias: $unitsofmeasure = http://unitsofmeasure.org
